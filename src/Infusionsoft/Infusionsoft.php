@@ -275,7 +275,11 @@ class Infusionsoft
         $client = $this->getHttpClient();
 
         $tokenInfo = $client->request('POST', $this->tokenUri, [
+<<<<<<< HEAD
             'body'    => http_build_query($params),
+=======
+            'body' => http_build_query($params),
+>>>>>>> codeigniter4
             'headers' => ['Content-Type' => 'application/x-www-form-urlencoded']
         ]);
 
@@ -396,12 +400,20 @@ class Infusionsoft
      */
     public function getLogs()
     {
+<<<<<<< HEAD
         if ( ! $this->debug) {
+=======
+        if (!$this->debug) {
+>>>>>>> codeigniter4
             return array();
         }
 
         $logger = $this->getHttpLogAdapter();
+<<<<<<< HEAD
         if ( ! $logger instanceof ArrayLogger) {
+=======
+        if (!$logger instanceof ArrayLogger) {
+>>>>>>> codeigniter4
             return array();
         }
 
@@ -417,7 +429,7 @@ class Infusionsoft
     {
         $token = $this->getToken();
 
-        if ( ! is_object($token)) {
+        if (!is_object($token)) {
             return true;
         }
 
@@ -461,7 +473,11 @@ class Infusionsoft
     /**
      * @param string $method
      * @param string $url
+<<<<<<< HEAD
      * @param array  $params
+=======
+     * @param array $params
+>>>>>>> codeigniter4
      *
      * @throws InfusionsoftException
      * @return mixed
@@ -480,9 +496,15 @@ class Infusionsoft
 
         if (strtolower($method) === 'get' || strtolower($method) === 'delete') {
             $params = array_merge(array('access_token' => $token->getAccessToken()), $params);
+<<<<<<< HEAD
             $url    = $url . '?' . http_build_query($params);
         } else {
             $url                 = $url . '?' . http_build_query(array('access_token' => $token->getAccessToken()));
+=======
+            $url = $url . '?' . http_build_query($params);
+        } else {
+            $url = $url . '?' . http_build_query(array('access_token' => $token->getAccessToken()));
+>>>>>>> codeigniter4
             $full_params['body'] = json_encode($params);
         }
 
@@ -510,7 +532,10 @@ class Infusionsoft
     /**
      * @param \DateTime|string $datetime
      *
+<<<<<<< HEAD
      * @throws \Exception
+=======
+>>>>>>> codeigniter4
      * @return string
      */
     public function formatDate($datetime = 'now')
@@ -540,11 +565,17 @@ class Infusionsoft
             'files',
             'funnels',
             'invoices',
+<<<<<<< HEAD
             'merchants',
             'orders',
             'products',
             'search',
             'tags',
+=======
+            'orders',
+            'products',
+            'search',
+>>>>>>> codeigniter4
             'shipping',
             'webForms',
             'webTracking'
@@ -605,6 +636,17 @@ class Infusionsoft
 
     /**
      * @return \Infusionsoft\Api\CreditCardSubmissionService
+<<<<<<< HEAD
+=======
+     */
+    public function creditcards()
+    {
+        return $this->getApi('CreditCardSubmissionService');
+    }
+
+    /**
+     * @return \Infusionsoft\Api\APIEmailService
+>>>>>>> codeigniter4
      */
     public function creditcards()
     {
@@ -666,7 +708,11 @@ class Infusionsoft
     /**
      * @param string $api
      *
+<<<<<<< HEAD
      * @return \Infusionsoft\Api\OrderService | \Infusionsoft\Api\Rest\OrderService
+=======
+     * @return mixed
+>>>>>>> codeigniter4
      */
     public function orders($api = 'rest')
     {
@@ -680,7 +726,11 @@ class Infusionsoft
     /**
      * @param string $api
      *
+<<<<<<< HEAD
      * @return \Infusionsoft\Api\ProductService | \Infusionsoft\Api\Rest\ProductService
+=======
+     * @return mixed
+>>>>>>> codeigniter4
      */
     public function products($api = 'rest')
     {
@@ -740,6 +790,7 @@ class Infusionsoft
     }
 
     /**
+<<<<<<< HEAD
      * @return \Infusionsoft\Api\Rest\NoteService
      */
     public function notes()
@@ -748,6 +799,8 @@ class Infusionsoft
     }
 
     /**
+=======
+>>>>>>> codeigniter4
      * @return \Infusionsoft\Api\Rest\AppointmentService
      */
     public function appointments()
@@ -756,6 +809,7 @@ class Infusionsoft
     }
 
     /**
+<<<<<<< HEAD
      * @return \Infusionsoft\Api\Rest\CustomFieldService
      */
     public function customfields()
@@ -772,6 +826,8 @@ class Infusionsoft
     }
 
     /**
+=======
+>>>>>>> codeigniter4
      * @return \Infusionsoft\Api\Rest\TransactionService
      */
     public function transactions()
@@ -787,6 +843,7 @@ class Infusionsoft
         return $this->getRestApi('CampaignService');
     }
 
+<<<<<<< HEAD
 	/**
 	 * @return \Infusionsoft\Api\Rest\CampaignService
 	 */
@@ -819,6 +876,8 @@ class Infusionsoft
         return $this->getRestApi('SubscriptionService');
     }
 
+=======
+>>>>>>> codeigniter4
     /**
      * Returns the requested class name, optionally using a cached array so no
      * object is instantiated more than once during a request.
@@ -850,7 +909,15 @@ class Infusionsoft
     {
         $class = '\Infusionsoft\Api\Rest\\' . $class;
 
+<<<<<<< HEAD
         return new $class($this);
+=======
+        if (!array_key_exists($class, $this->apis)) {
+            $this->apis[$class] = new $class($this);
+        }
+
+        return $this->apis[$class];
+>>>>>>> codeigniter4
     }
 
 }

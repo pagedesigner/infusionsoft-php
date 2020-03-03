@@ -2,7 +2,10 @@
 
 use Infusionsoft\Api\Rest\Traits\CannotCreate;
 use Infusionsoft\Api\Rest\Traits\CannotDelete;
+<<<<<<< HEAD
 use Infusionsoft\Api\Rest\Traits\CannotModel;
+=======
+>>>>>>> codeigniter4
 use Infusionsoft\Api\Rest\Traits\CannotSave;
 use Infusionsoft\Api\Rest\Traits\CannotSync;
 use Infusionsoft\Infusionsoft;
@@ -11,7 +14,11 @@ use Infusionsoft\InfusionsoftException;
 class CampaignService extends RestModel
 {
 
+<<<<<<< HEAD
     use CannotCreate, CannotDelete, CannotSave, CannotSync, CannotModel;
+=======
+    use CannotCreate, CannotDelete, CannotSave, CannotSync;
+>>>>>>> codeigniter4
 
     public $full_url = 'https://api.infusionsoft.com/crm/rest/v1/campaigns';
 
