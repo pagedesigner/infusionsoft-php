@@ -276,9 +276,13 @@ class Infusionsoft
 
         $tokenInfo = $client->request('POST', $this->tokenUri, [
 <<<<<<< HEAD
+<<<<<<< HEAD
             'body'    => http_build_query($params),
 =======
             'body' => http_build_query($params),
+>>>>>>> codeigniter4
+=======
+            'body'    => http_build_query($params),
 >>>>>>> codeigniter4
             'headers' => ['Content-Type' => 'application/x-www-form-urlencoded']
         ]);
@@ -401,18 +405,29 @@ class Infusionsoft
     public function getLogs()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ( ! $this->debug) {
 =======
         if (!$this->debug) {
+>>>>>>> codeigniter4
+=======
+        if ( !$this->debug) {
+=======
+        if ( ! $this->debug) {
+>>>>>>> 699919e5c65f032400a53343e8c8751c063a8d25
 >>>>>>> codeigniter4
             return array();
         }
 
         $logger = $this->getHttpLogAdapter();
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ( ! $logger instanceof ArrayLogger) {
 =======
         if (!$logger instanceof ArrayLogger) {
+>>>>>>> codeigniter4
+=======
+        if ( ! $logger instanceof ArrayLogger) {
 >>>>>>> codeigniter4
             return array();
         }
@@ -474,9 +489,13 @@ class Infusionsoft
      * @param string $method
      * @param string $url
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @param array  $params
 =======
      * @param array $params
+>>>>>>> codeigniter4
+=======
+     * @param array  $params
 >>>>>>> codeigniter4
      *
      * @throws InfusionsoftException
@@ -497,6 +516,7 @@ class Infusionsoft
         if (strtolower($method) === 'get' || strtolower($method) === 'delete') {
             $params = array_merge(array('access_token' => $token->getAccessToken()), $params);
 <<<<<<< HEAD
+<<<<<<< HEAD
             $url    = $url . '?' . http_build_query($params);
         } else {
             $url                 = $url . '?' . http_build_query(array('access_token' => $token->getAccessToken()));
@@ -504,6 +524,11 @@ class Infusionsoft
             $url = $url . '?' . http_build_query($params);
         } else {
             $url = $url . '?' . http_build_query(array('access_token' => $token->getAccessToken()));
+>>>>>>> codeigniter4
+=======
+            $url    = $url . '?' . http_build_query($params);
+        } else {
+            $url                 = $url . '?' . http_build_query(array('access_token' => $token->getAccessToken()));
 >>>>>>> codeigniter4
             $full_params['body'] = json_encode($params);
         }
@@ -533,8 +558,12 @@ class Infusionsoft
      * @param \DateTime|string $datetime
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @throws \Exception
 =======
+>>>>>>> codeigniter4
+=======
+     * @throws \Exception
 >>>>>>> codeigniter4
      * @return string
      */
@@ -566,15 +595,21 @@ class Infusionsoft
             'funnels',
             'invoices',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
             'merchants',
             'orders',
             'products',
             'search',
             'tags',
+<<<<<<< HEAD
 =======
             'orders',
             'products',
             'search',
+>>>>>>> codeigniter4
+=======
 >>>>>>> codeigniter4
             'shipping',
             'webForms',
@@ -637,6 +672,7 @@ class Infusionsoft
     /**
      * @return \Infusionsoft\Api\CreditCardSubmissionService
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      */
     public function creditcards()
@@ -646,6 +682,8 @@ class Infusionsoft
 
     /**
      * @return \Infusionsoft\Api\APIEmailService
+>>>>>>> codeigniter4
+=======
 >>>>>>> codeigniter4
      */
     public function creditcards()
@@ -709,9 +747,13 @@ class Infusionsoft
      * @param string $api
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return \Infusionsoft\Api\OrderService | \Infusionsoft\Api\Rest\OrderService
 =======
      * @return mixed
+>>>>>>> codeigniter4
+=======
+     * @return \Infusionsoft\Api\OrderService | \Infusionsoft\Api\Rest\OrderService
 >>>>>>> codeigniter4
      */
     public function orders($api = 'rest')
@@ -727,9 +769,13 @@ class Infusionsoft
      * @param string $api
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return \Infusionsoft\Api\ProductService | \Infusionsoft\Api\Rest\ProductService
 =======
      * @return mixed
+>>>>>>> codeigniter4
+=======
+     * @return \Infusionsoft\Api\ProductService | \Infusionsoft\Api\Rest\ProductService
 >>>>>>> codeigniter4
      */
     public function products($api = 'rest')
@@ -791,6 +837,9 @@ class Infusionsoft
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
      * @return \Infusionsoft\Api\Rest\NoteService
      */
     public function notes()
@@ -799,6 +848,9 @@ class Infusionsoft
     }
 
     /**
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
 =======
 >>>>>>> codeigniter4
      * @return \Infusionsoft\Api\Rest\AppointmentService
@@ -810,6 +862,9 @@ class Infusionsoft
 
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
      * @return \Infusionsoft\Api\Rest\CustomFieldService
      */
     public function customfields()
@@ -826,6 +881,9 @@ class Infusionsoft
     }
 
     /**
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
 =======
 >>>>>>> codeigniter4
      * @return \Infusionsoft\Api\Rest\TransactionService
@@ -844,6 +902,9 @@ class Infusionsoft
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
 	/**
 	 * @return \Infusionsoft\Api\Rest\CampaignService
 	 */
@@ -876,6 +937,9 @@ class Infusionsoft
         return $this->getRestApi('SubscriptionService');
     }
 
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
 =======
 >>>>>>> codeigniter4
     /**
@@ -910,6 +974,7 @@ class Infusionsoft
         $class = '\Infusionsoft\Api\Rest\\' . $class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return new $class($this);
 =======
         if (!array_key_exists($class, $this->apis)) {
@@ -917,6 +982,9 @@ class Infusionsoft
         }
 
         return $this->apis[$class];
+>>>>>>> codeigniter4
+=======
+        return new $class($this);
 >>>>>>> codeigniter4
     }
 

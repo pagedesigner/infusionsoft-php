@@ -22,9 +22,14 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
     protected $updateVerb = 'put';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected $primaryKey = 'id';
 
 =======
+>>>>>>> codeigniter4
+=======
+    protected $primaryKey = 'id';
+
 >>>>>>> codeigniter4
     protected $optionalProperities = [];
 
@@ -170,12 +175,18 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
         // well, is it a post or a put? we need to figure out if this thing exists or not
         // long story short, if the "id" is set, it's an update.
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (isset($this->{$this->primaryKey})) {
             $data = $this->client->restfulRequest(strtolower($this->updateVerb),
                 $this->getFullUrl($this->{$this->primaryKey}),
 =======
         if (isset($this->id)) {
             $data = $this->client->restfulRequest(strtolower($this->updateVerb), $this->getFullUrl($this->id),
+>>>>>>> codeigniter4
+=======
+        if (isset($this->{$this->primaryKey})) {
+            $data = $this->client->restfulRequest(strtolower($this->updateVerb),
+                $this->getFullUrl($this->{$this->primaryKey}),
 >>>>>>> codeigniter4
                 (array)$this->toArray());
         } else {
@@ -240,10 +251,15 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
     public function delete()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $response = $this->client->restfulRequest('delete',
             $this->getFullUrl($this->{$this->primaryKey}));
 =======
         $response = $this->client->restfulRequest('delete', $this->getFullUrl($this->id ? $this->id : $this->key));
+>>>>>>> codeigniter4
+=======
+        $response = $this->client->restfulRequest('delete',
+            $this->getFullUrl($this->{$this->primaryKey}));
 >>>>>>> codeigniter4
 
         return true;
@@ -274,6 +290,9 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
         $this->where('limit', 1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
         $params = $this->where;
         if (!empty($this->optionalProperities)) {
           $params['optional_properties'] = implode(',', $this->optionalProperities);
@@ -281,9 +300,12 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
 
         if (!empty($params)) {
             $data = $this->client->restfulRequest('get', $this->getIndexUrl(), $params);
+<<<<<<< HEAD
 =======
         if (!empty($this->where)) {
             $data = $this->client->restfulRequest('get', $this->getIndexUrl(), $this->where);
+>>>>>>> codeigniter4
+=======
 >>>>>>> codeigniter4
         } else {
             $data = $this->client->restfulRequest('get', $this->getIndexUrl());
@@ -306,6 +328,9 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
     public function count()
     {
         $this->where('limit', 1);
@@ -315,6 +340,9 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
         return $data['count'];
     }
 
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
 =======
 >>>>>>> codeigniter4
     public function all()
@@ -333,6 +361,9 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
 	public function model()
 	{
 		$data = $this->client->restfulRequest('get', $this->getFullUrl('model'));
@@ -341,6 +372,7 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
 		return $this;
 	}
 
+<<<<<<< HEAD
 =======
     public function collect(array $array, $cursor = [])
     {
@@ -1092,6 +1124,8 @@ abstract class RestModel implements ArrayAccess, JsonSerializable
 
         return str_replace(' ', '', $value);
     }
+>>>>>>> codeigniter4
+=======
 >>>>>>> codeigniter4
 
     public function collect(array $array, $cursor = [])

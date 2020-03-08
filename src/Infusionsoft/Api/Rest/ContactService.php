@@ -29,6 +29,9 @@ class ContactService extends RestModel
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
     public function emails()
     {
         $data = $this->client->restfulRequest('get', $this->getFullUrl($this->id . '/emails'));
@@ -40,10 +43,13 @@ class ContactService extends RestModel
     public function addTags($tagIds)
     {
         if ( ! is_array($tagIds)) {
+<<<<<<< HEAD
 =======
     public function addTags($tagIds)
     {
         if (!is_array($tagIds)) {
+>>>>>>> codeigniter4
+=======
 >>>>>>> codeigniter4
             throw new InfusionsoftException('Must be an array of tag ids');
         } elseif (count($tagIds) > 100) {
@@ -51,9 +57,13 @@ class ContactService extends RestModel
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $tags         = new \stdClass;
 =======
         $tags = new \stdClass;
+>>>>>>> codeigniter4
+=======
+        $tags         = new \stdClass;
 >>>>>>> codeigniter4
         $tags->tagIds = $tagIds;
 
@@ -64,6 +74,9 @@ class ContactService extends RestModel
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
     public function create(array $attributes = [], $dupCheck = false)
     {
         $this->mock($attributes);
@@ -80,10 +93,13 @@ class ContactService extends RestModel
     public function removeTags($tagIds)
     {
         if ( ! is_array($tagIds)) {
+<<<<<<< HEAD
 =======
     public function removeTags($tagIds)
     {
         if (!is_array($tagIds)) {
+>>>>>>> codeigniter4
+=======
 >>>>>>> codeigniter4
             throw new InfusionsoftException('Must be an array of tag ids');
         } elseif (count($tagIds) > 100) {
@@ -99,7 +115,12 @@ class ContactService extends RestModel
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+>>>>>>> codeigniter4
+=======
+
+
 >>>>>>> codeigniter4
 }

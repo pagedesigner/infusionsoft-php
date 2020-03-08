@@ -10,6 +10,9 @@ class InfusionsoftTest extends \PHPUnit_Framework_TestCase
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> codeigniter4
     /**
      * @var Infusionsoft
      */
@@ -154,6 +157,7 @@ class InfusionsoftTest extends \PHPUnit_Framework_TestCase
         $this->ifs->requestAccessToken('code');
         $this->assertEquals('access_token', $this->ifs->getToken()->getAccessToken());
     }
+<<<<<<< HEAD
 =======
 	/**
 	 * @var Infusionsoft
@@ -275,6 +279,8 @@ class InfusionsoftTest extends \PHPUnit_Framework_TestCase
 		$this->ifs->requestAccessToken('code');
 		$this->assertEquals('access_token', $this->ifs->getToken()->getAccessToken());
 	}
+>>>>>>> codeigniter4
+=======
 >>>>>>> codeigniter4
 
     public function testIsTokenExpired()
